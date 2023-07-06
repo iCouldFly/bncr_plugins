@@ -11,15 +11,6 @@
  * @disable true
 */
 module.exports = async s => {
-    // let jdgroupDB = new BncrDB('jdgroup'),
-    // param1 = s.param(1),
-    // param2 = s.param(2),
-    // param3 = s.param(3),
-    // param4 = s.param(4),
-    // param5 = s.param(5),
-    // userId = s.getUserId(),
-    // groupId = s.getGroupId(),
-    // from = s.getFrom();
     const comFn = require('./lib/functions')
     const input = s.getMsg();
     if (input == "菜单") {
