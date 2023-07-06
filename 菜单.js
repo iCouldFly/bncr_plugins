@@ -8,7 +8,7 @@
  * @admin false
  * @public true
  * @priority 0
- * @disable true
+ * @disable false
 */
 module.exports = async s => {
     const comFn = require('./lib/functions')
