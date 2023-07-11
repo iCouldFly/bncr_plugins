@@ -2,7 +2,7 @@
  * @author Jusbe
  * @name 菜单
  * @origin Jusbe
- * @version 2.0.0
+ * @version 2.0.1
  * @description 汇总一下常用脚本，根据需求自己增删
  * @rule ^菜单$
  * @admin false
@@ -11,12 +11,12 @@
  * @disable false
 */
 module.exports = async s => {
-    let jdgroupDB = new BncrDB('jdgroup'),
-    param1 = s.param(1),
-    param2 = s.param(2),
-    userId = s.getUserId(),
-    groupId = s.getGroupId(),
-    from = s.getFrom();
+    // let jdgroupDB = new BncrDB('jdgroup'),
+    // param1 = s.param(1),
+    // param2 = s.param(2),
+    // userId = s.getUserId(),
+    // groupId = s.getGroupId(),
+    // from = s.getFrom();
     const comFn = require('./lib/functions')
     
     //主菜单
@@ -169,7 +169,7 @@ module.exports = async s => {
                 '添加JDGrouop返利助手，享受更多优惠\nQQ号：2677583998']
             let img9 = await s.reply({ 
                 type: 'image', 
-                path: "http://192.168.1.13:8080/imgs/static/9aYi1sV5.jpg", 
+                path: "http://xxxxxxxx.jpg", 
                 msg: "" })
             let loading9 = await s.reply(mainList[index] + "\n----------------------\n" + singleMenu(_m))
             await s.delMsg(loading9, { wait: 60 })
@@ -191,26 +191,4 @@ module.exports = async s => {
         g.map((item) => { _txt += ++num + "." + item + (num%2 ? "	" : "\n") });
         return _txt
     }
-
-    //totalClass();
-    //await s.delMsg(loading, { wait: 2 });
-
-/*    async function totalClass() {
-        switch (input) {
-            case '购物查券返利':
-                let img9 = await s.reply({ 
-                    type: 'image', 
-                    path: "http://192.168.1.13:8080/imgs/static/9aYi1sV5.jpg", 
-                    msg: "添加JDGrouop购物助手，享受更多优惠\nQQ号：2677583998" })
-                let loading9 = await s.reply("添加JDGrouop购物助手，享受更多优惠\nQQ号：2677583998")
-                await s.delMsg(loading9, { wait: 60 })
-                await s.delMsg(img9, { wait: 60 })
-                break;
-            case '购物查券返利':
-                const resp = await comFn._request({ url: 'http://xiaobai.klizi.cn/API/other/sjsc.php' });
-                const { content, origin, author } = JSON.parse(resp);
-                const replyText = `\t《${origin}》\n\t\t\t\t${author}\n${content}`;
-                s.reply(replyText);
-                break;
-*/
 };
