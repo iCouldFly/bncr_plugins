@@ -2,7 +2,7 @@
  * @author Jusbe
  * @name 菜单
  * @origin Jusbe
- * @version 3.0.0
+ * @version 3.0.1
  * @description 汇总一下常用脚本，根据需求自己增删
  * @rule ^(菜单|帮助)$
  * @rule ^(京东命令|福利命令|社交命令|查询命令|影音命令|游戏命令|随机命令|管理命令|系统命令|购物查券返利)$
@@ -23,12 +23,12 @@ module.exports = async s => {
     const errWaitTime = 6 //错误提示撤回时间。秒
     console.log(`【菜单】\n[${isAdmin ? '管理员' : isVip ? 'vip' : '普通'}用户]：${userId}`)
 
-    const tag = '欢迎使用 JDGroup 助手'
-    const tips = ''
+    const tag = '欢迎使用 JDGroup 助手' //主菜单标题
+    const tips = '' // 主菜单底部备注
     const menuText = [
         {
-            'tag':'京东命令',
-            'context':[
+            'tag':'京东命令', //子菜单标题
+            'context':[ //子菜单内容
                 '登录	-	登录/更新京东账号', 
                 '查询	-	查询京东资产', 
                 '豆豆	-	查询京豆余额/收入明细', 
@@ -38,9 +38,10 @@ module.exports = async s => {
                 '[pt_key;pt_pin;]	-	发送cookie上车', 
                 '[pin;wskey;]	-	发送wskey上车'
             ],
-            'tips':"",
-            'admin': 0,
-            'vip': 0
+            'tips':"", // 子菜单底部备注
+            'img':"", // 配图url
+            'admin': 0, // 限制管理员用户，0 是 / 1 否
+            'vip': 0 // 限制白名单用户，0 是 / 1 否
         },{
             'tag':'福利命令',
             'context':[
@@ -150,21 +151,8 @@ module.exports = async s => {
                 '指令：[京粉/淘客/多多/京喜/唯品会]明细，返回当前平台今天收入明细',
                 '指令：监听场所，当全局设置-禁止监听所有群打开时生效。用于开启当前群的消息监听。',
                 '指令：取消监听场所，当全局设置-禁止监听所有群打开时生效。用于关闭当前群的消息监听。',
-                '==== 小栗子QQ =====',
-                '全群搜寻[QQ号]	-	在接收消息的机器人加入的所有群内查找指定QQ是否存在！',
-                '禁言[@xxx 10]	-	将群成员禁言，注意空格，支持QQ号/艾特',
-                '解禁[@xxx]	-	解除禁言',
-                '全体禁言/解禁	-	开启全群禁言/解禁',
-                '移出[@xxx]	-	将群成员移出群聊，机器人需管理权限，支持QQ号/艾特',
-                '批量移出[xxx xxx xxx]	-	批量移出，仅支持QQ。空格分割',
-                '撤回[@xxx 10]	-	撤回指定群员指定数量的消息',
-                '查邀请[QQ]	-	查询指定成员邀请信息',
-                '拉全局黑[@xxx]	-	将群成员加入全局黑名单，支持QQ号/艾特',
-                '删全局黑[xxxx]	-	将群成员从全局黑名单中删除，只支持QQ号',
-                '检测黑名单	-	检测群内是否有黑名单成员，检测到后自动移出',
-                '开启/关闭[功能名称]	-	炸弹功能、钓鱼功能、点歌功能、坐骑功能、排行功能、签到功能',
             ],
-            'tips':"返利狗文档：https://www.yuque.com/sunnysoft/fanlidog\n小栗子文档：https://cjqy.isoox.cn/page/start.html",
+            'tips':"返利狗文档：https://www.yuque.com/sunnysoft/fanlidog",
             'admin': 1,
             'vip': 0
         },{
