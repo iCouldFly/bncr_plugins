@@ -132,7 +132,7 @@ module.exports = async s => {
                 if(from.substring(0,2) === 'wx'){
                     return wxInviteIn(groupId)
                 }else{
-                    return await sendImgMsg("https://z4a.net/images/2023/08/21/aut_wx_bot.jpg","请添加微信好友使用")
+                    return await sendImgMsg("https://z4a.net/images/2023/08/23/bncr--rdog.png","请添加微信好友使用")
                 }
             }else{
                 return s.reply(`${groupMsg}\n----------------------\n${groupLink}`)
