@@ -2,8 +2,8 @@
  * @author Jusbe
  * @name 群导航
  * @origin Jusbe
- * @version 1.0.0
- * @description 只用脚本
+ * @version 1.0.3
+ * @description 自用脚本
  * @rule ^(群组?)(导航)$
  * //在下面删减你的群名称
  * @rule ^(日用|捡漏|猫猫|零食|母婴|定制|啊哈|QQ测试|test)(群)$
@@ -13,7 +13,7 @@
  * @disable false
 */
 module.exports = async s => {
-    const isPrivate = 1 // 1 限制私聊；2不限制私聊
+    const isPrivate = 1 // 是否限制私聊，0=否;1=是
     const groupList = { //在下面配置你的群信息
         "日用":{
             "chatId":"44266589552", //群号
